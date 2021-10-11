@@ -1,0 +1,24 @@
+<div class="container ml-5 text-center">
+    <div class="card" style="width: 22rem; height: 30rem;">
+    
+        <div class="card-body  bg-light">
+            <i class="fas fa-user-tie fa-4x text-primary"></i>
+            <br><br>
+          <h5 class="card-title text-center text-primary">Login</h5>
+          <hr>
+          
+          <form action="" method="post" [formGroup]="loginForm" (ngSubmit)="login()">
+              <!-- <label for="userId"></label> -->
+            <input type="text" formControlName="contact"  class="form-control" placeholder="UserId"><br> 
+            <input type="password" formControlName="password"  class="form-control" placeholder="password">
+            <a href="" class="nav-link">Forget password?</a>
+          
+            {{errorMessage}}
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary ">Login</button>
+            </div>
+          </form>
+          <a [routerLink]="['/register']" class="nav-link">New user ? Register Here</a>
+        </div>
+      </div>
+</div>

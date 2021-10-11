@@ -1,0 +1,41 @@
+{
+    "Posts":[
+        {
+            "title":"Class bunk",
+            "description":"Today's all guys have planned to bunk after lunch break",
+            "date":"@{currentdate}"
+        },
+        {
+            "title":"Java JSP Notes",
+            "description":"Yesterday java class notes of JSP.",
+            "date":"@{currentdate}"
+        },
+        {
+            "title":"Unit 2 Test Time Table",
+            "description":"Time table for Unit-Test 2 started from 2nd Aug.",
+            "date":"@{currentdate}"
+        },
+        {
+            "title":"Event Conducting on 12th sept.",
+            "description":"An event about sports is going to held on 12th sept at ground floor.",
+            "date":"@{currentdate}"
+        },
+        {
+            "title":"Mass Event",
+            "description":"TCS is coming tommorow for hiring 3rd year students.",
+            "date":"@{currentdate}"
+        },
+        
+        {
+            "title":"Mass Event",
+            "description":"TCS is coming tommorow for hiring 3rd year students.",
+            "date":"@{currentdate}"
+        },
+        {
+            "title":"Mass Event",
+            "description":"TCS is coming tommorow for hiring 3rd year students.",
+            "date":"@{currentdate}"
+        }
+        
+    ]
+}

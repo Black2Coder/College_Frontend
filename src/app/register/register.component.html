@@ -1,0 +1,37 @@
+
+<div class="container ml-5 text-center">
+    <div class="card" style="width: 22rem; height: 30rem;">
+        <div class="error-message">
+          <h4 class="text-success" *ngIf="successMessage!=null"> {{successMessage}} </h4>
+            <h4 class="text-danger" *ngIf="errorMessage!=null"> {{errorMessage}} </h4>
+        </div>
+        <div class="card-body bg-light">
+            <i class="fas fa-user-tie fa-2x text-primary"></i>
+            
+          <h5 class="card-title text-center text-primary">Register Here</h5>
+          <hr>
+          <form action="" method="post" [formGroup]="registerForm" (ngSubmit)="registerNow()">
+              <!-- <label for="userId"></label> -->
+            <input type="text" formControlName="userName" placeholder="Full Name" class="form-control" ><br>
+            <span class="text-danger" id="emailIdError" *ngIf="registerForm.controls.userName.invalid && 
+            registerForm.controls.userName.dirty">Please Enter Name</span>
+            <input type="email"  formControlName="emailId" placeholder="Email Id" class="form-control"><br>
+            <span class="text-danger" id="emailIdError" *ngIf="registerForm.controls.emailId.invalid && 
+            registerForm.controls.emailId.dirty">Please Enter a valid email</span>
+            <input type="number"  formControlName="contact" class="form-control" placeholder="phone number"><br> 
+            <span class="text-danger" id="contactError" *ngIf="registerForm.controls.contact.invalid && 
+            registerForm.controls.contact.dirty">Please Enter a valid Mobile Number</span>
+            <input type="password"  formControlName="password"   class="form-control" placeholder="password" ><br>
+            <span class="text-danger" id="contactError" *ngIf="registerForm.controls.password.invalid && 
+            registerForm.controls.password.dirty">Please Enter a valid Mobile Number</span>
+            <input type="password"  class="form-control" [(ngModel)]="conf_pass" [ngModelOptions]="{standalone: true}" placeholder="confirm password">
+            {{conf_pass}}
+            <span class="text-danger" *ngIf="false" (change)="passMatch()" >Password not matching</span>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary " (disabled)="registerForm.invalid">Sign Up</button>
+            </div>
+          </form>
+          <a [routerLink]="['/login']" class="nav-link">Already have account ? Login Here</a>
+        </div>
+      </div>
+</div>
