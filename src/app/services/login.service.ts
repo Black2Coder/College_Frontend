@@ -13,8 +13,13 @@ export class LoginService {
   constructor(private http:HttpClient, private router: Router) { }
 
   login(user:any):Observable<User>{
-    return this.http.post<User>(environment.login,user)
+    return this.http.post<User>(environment.userLogin,user)
 }
+
+
+  getUserDetail(){
+    return this.http.get(environment.userDetail)
+  }
 
   loginUser(token:string){
     localStorage.setItem("token", token);
@@ -28,7 +33,7 @@ export class LoginService {
       console.log("Is Login");
     }
     else{
-      console.log("Is Login  =  true");
+      
       return true;
     }
     
@@ -36,6 +41,9 @@ export class LoginService {
   }
   logout(){
     localStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    
+
     this.router.navigate(['/home']);
   }
   getToken(){

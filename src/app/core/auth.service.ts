@@ -8,7 +8,8 @@ import { User } from '../User';
 })
 export class AuthService {
   
-  sessonUser:BehaviorSubject<User> = new BehaviorSubject<User>(new User());
+  sessionUser:BehaviorSubject<User> = new BehaviorSubject<User>(new User());
+  
   user:User;
   constructor(private http:HttpClient) {
     this.loadSessonUser();
@@ -20,7 +21,9 @@ export class AuthService {
    }
    nextUser(data:User){
      this.user=data;
-     this.sessonUser.next(this.user);
+     console.log(this.user);
+     
+     this.sessionUser.next(this.user); 
    }
 
 }

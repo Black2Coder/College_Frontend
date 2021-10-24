@@ -15,7 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AuthGuard } from './services/auth.guard';
-import { AuthInterceptor } from './core/auth.interceptor';
+import { AuthInterceptor, authInterceptorProvider } from './core/auth.interceptor';
 import { LoginService } from './services/login.service';
 
 @NgModule({
@@ -37,7 +37,7 @@ import { LoginService } from './services/login.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService ,AuthGuard,[{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}]],
+  providers: [LoginService ,AuthGuard,authInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

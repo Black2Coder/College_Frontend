@@ -34,13 +34,19 @@ export class LoginComponent implements OnInit {
       res => {
         this.errorMessage=null;
         this.service.loginUser(res.token)
-        console.log(res.token);
+        this.service.getUserDetail().subscribe(
+           (res:any)=> {this.user = res;
+            localStorage.setItem("userName", this.user.userName)
+          console.log(this.user);
+          
+          }
+        )
         
         // this.auth.nextUser(this.user)
         this.router.navigate(['/home'])
       // console.log(this.user.userName);
       },
-      err=>this.errorMessage = err.error.message
+      err=>this.errorMessage = err.error.errorMessage
     )
   }
 

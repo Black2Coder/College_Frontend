@@ -4,9 +4,12 @@
 export const environment = {
   
   book : "http://localhost:4000/post",
+  home: "http://localhost:4000/home",
   login:"http://localhost:4000/authenticate",
   getPost:"http://localhost:4000/post",
-  registerUser : "http://localhost:4000/register/",
+  registerUser : "http://localhost:4000/register",
+  userDetail:"http://localhost:4000/current-user/",
+  userLogin:"http://localhost:4000/login",
   production: false
 };
 

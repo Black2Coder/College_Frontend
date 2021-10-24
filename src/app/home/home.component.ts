@@ -14,16 +14,20 @@ export class HomeComponent implements OnInit {
   posts:Post[]=[];
   title:any;
   p:number=1;
+  errorMessage:string;
   constructor(private service:HomeService) { }
 
   ngOnInit(): void {
+    let token  = localStorage.getItem('token')
+    
     this.service.getPost().subscribe(
       response => {this.posts=response;
-      console.log(response);
-      
       },
-      err => console.log(err.error)
-      
+      err => {
+        this.posts = null;
+        this.errorMessage = err.message;
+        console.log(err.message)
+      }
       );
   }
   search(){
